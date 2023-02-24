@@ -52,6 +52,26 @@ namespace Data_Structures
             
         }
 
+        public void append(int data)
+        {
+            Node newNode = new Node(data);
+            if (head == null)
+            {
+                head = newNode;
+                Console.WriteLine("{0} is added into linked list", newNode.data);
+            }
+            else
+            {
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = newNode;
+                Console.WriteLine("{0} is added into linked list", newNode.data);
+            }
+        }
+
         internal void display()
         {
             Node temp = this.head;

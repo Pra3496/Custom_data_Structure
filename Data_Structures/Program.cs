@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Data_Structures
 {
@@ -17,7 +18,9 @@ namespace Data_Structures
                 Console.WriteLine("1 : Create linked list");
                 Console.WriteLine("2 : Display linked list");
                 Console.WriteLine("3 : Add First linked list");
+                Console.WriteLine("4 : Append linked list");
                 Console.WriteLine("0 : Exit");
+                Console.Write("ENTER YOUR CHOICE : ");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -38,6 +41,11 @@ namespace Data_Structures
                         list.addFirst(30);
                         list.addFirst(56);
                         break;
+                    case 4:
+                        list.append(56);
+                        list.append(30);
+                        list.append(70);
+                        break;
 
                     case 0:
                         flag= false;
@@ -48,20 +56,7 @@ namespace Data_Structures
                         break;
                 }
             }
-            /*
-            list.add(70);
-            Console.WriteLine();
-            list.display();
-
-            Console.WriteLine();
-
-            list.add(30);
-            
-
-            list.add(56);
-            Console.WriteLine();
-            list.display(); 
-            */
+           
 
 
 
