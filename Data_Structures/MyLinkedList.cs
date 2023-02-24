@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Data_Structures
 {
@@ -25,13 +26,30 @@ namespace Data_Structures
 
                 while(temp.next != null)
                 {
-                    temp= temp.next;
+                    temp = temp.next;
                 }
-                   temp.next = node;
-                
-               
+
+                temp.next = node;
+                  
             }
             Console.WriteLine("{0} Inserted into Linked List", data);
+        }
+
+        public void addFirst(int data)
+        {
+            if (this.head == null)
+            {
+                add(data);
+            }
+            else
+            {
+                Node newNode = new Node(data);
+                newNode.next = head;
+                head = newNode;
+                Console.WriteLine("{0} is added into linked list", newNode.data);
+            }
+
+            
         }
 
         internal void display()
@@ -47,13 +65,13 @@ namespace Data_Structures
             {
                 Console.Write("Head-",temp.data);
 
-                while (temp.next != null)
+                while (temp != null)
                 {
-                    Console.Write("{0} -> ", temp.data);
+                    Console.Write(" {0} -> ", temp.data);
                     temp = temp.next;
                 }
 
-                Console.Write("[{0}]-NULL", temp.data);
+                Console.Write("-NULL");
             }
         }
         
