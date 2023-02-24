@@ -9,7 +9,7 @@ namespace Data_Structures
 {
     public class MyLinkedList
     {
-        internal Node head;
+        public Node head;
 
         public void add(int data)
         {
@@ -72,7 +72,43 @@ namespace Data_Structures
             }
         }
 
-        internal void display()
+        public void addAtPos(int data, int iPos)
+        {
+            Node newNode = new Node(data);
+            if (head == null)
+            {
+                head = newNode;
+                Console.WriteLine("{0} is added into linked list", newNode.data);
+            }
+            else
+            {
+                Node temp = head;
+                while (temp != null)
+                {
+                    if(temp.data == iPos)
+                    {
+                        newNode.next = temp.next;
+                        temp.next = newNode;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+                
+                Console.WriteLine("{0} is added Between {1} and {2} linked list", newNode.data,temp.data,(newNode.next).data);
+            }
+        }
+
+        public void remove()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Linked list is empty");
+            }
+            this.head = this.head.next;
+            Console.WriteLine("First element is deleted successfully");
+        }
+
+        public void display()
         {
             Node temp = this.head;
 

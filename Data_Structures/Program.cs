@@ -26,14 +26,14 @@ namespace Data_Structures
                 {
                     case 1:
                         list.add(56);
-                        list.add(30);
+                       // list.add(30);
                         list.add(70);
                         break;
 
                     case 2:
-                        Console.WriteLine();
+                        Console.WriteLine("\n");
                         list.display();
-                        Console.WriteLine();
+                        Console.WriteLine("\n");
                         break;
 
                     case 3:
@@ -46,7 +46,9 @@ namespace Data_Structures
                         list.append(30);
                         list.append(70);
                         break;
-
+                    case 5:
+                        list.addAtPos(333,56);
+                        break;
                     case 0:
                         flag= false;
                         break;
