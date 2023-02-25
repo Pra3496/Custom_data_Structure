@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -72,31 +73,43 @@ namespace Data_Structures
             }
         }
 
-        public void addAtPos(int data, int iPos)
+        public void insertAfter(int data, int iPos)
         {
+
             Node newNode = new Node(data);
-            if (head == null)
+            
+
+            if (this.head == null)
             {
-                head = newNode;
+                this.head = newNode;
                 Console.WriteLine("{0} is added into linked list", newNode.data);
             }
             else
             {
-                Node temp = head;
-                while (temp != null)
+                Node temp = this.head;
+               
+                while(temp.next != null)
                 {
                     if(temp.data == iPos)
                     {
                         newNode.next = temp.next;
                         temp.next = newNode;
+                        
                         break;
                     }
                     temp = temp.next;
                 }
-                
-                Console.WriteLine("{0} is added Between {1} and {2} linked list", newNode.data,temp.data,(newNode.next).data);
+                if(temp.next == null)
+                {
+                    Console.WriteLine("Given {0} Node is Not Present in Linked List",iPos);
+                }
+                else
+                {
+                    Console.WriteLine("{0} is added Between {1} and {2} linked list", newNode.data, temp.data, (newNode.next).data);
+                }
             }
         }
+
 
         public void remove()
         {
@@ -109,8 +122,35 @@ namespace Data_Structures
                 this.head = (this.head).next;
                 Console.WriteLine("First element is deleted successfully");
             }
-            
+
         }
+
+
+        public void removeLast()
+        {
+            Node temp = this.head;
+
+            if (temp == null)
+            {
+                Console.WriteLine("Linked list is Empty");
+                return;
+            }
+            else if(temp.next == null)
+            {
+                this.head = null;
+            }
+            else
+            { 
+                while ((temp.next).next != null)
+                {
+                    temp = temp.next;
+                }
+
+                temp.next = null;
+            }
+        }
+
+
 
         public void display()
         {
@@ -123,17 +163,15 @@ namespace Data_Structures
             }
             else
             {
-                Console.Write("Head-",temp.data);
-
                 while (temp != null)
                 {
                     Console.Write(" {0} -> ", temp.data);
                     temp = temp.next;
                 }
-
-                Console.Write("-NULL");
             }
         }
-        
+
+       
+
     }
 }
