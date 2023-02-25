@@ -28,6 +28,7 @@ namespace Data_Structures
                 Console.WriteLine("8  : Search Element in linked list");
                 Console.WriteLine("9  : Size of linked list");
                 Console.WriteLine("10 : Remove-After Node");
+                Console.WriteLine("10 : Sort Linked List");
                 Console.WriteLine("0  : Exit\n");
                 Console.Write("ENTER YOUR CHOICE : ");
                 int option = Convert.ToInt32(Console.ReadLine());
@@ -53,9 +54,9 @@ namespace Data_Structures
 
                     case 2:
                         Console.WriteLine("----------{ DISPLAY NODE }----------\n");
-                        Console.Write("Head-");
+                        
                         list.display();
-                        Console.Write("-NULL");
+                        
                         Console.WriteLine("\n------------------------------------------");
                         Console.Write("\npress any key.....");
                         Console.ReadKey();
@@ -151,6 +152,18 @@ namespace Data_Structures
                         Console.Write("Enter the Element you want to Remove : ");
                         iNo = Convert.ToInt32(Console.ReadLine());
                         list.removeAfter(iNo);
+
+                        Console.WriteLine("\n-------------------------------------------");
+                        break;
+
+                    case 11:
+                        Console.WriteLine("----------{ SORT LINKED LIST }----------\n");
+                        Console.WriteLine("Un-sorted Linked List\n");
+                        list.display();
+                        list.sort();
+
+                        Console.WriteLine("\nSorted Linked List\n");
+                        list.display();
 
                         Console.WriteLine("\n-------------------------------------------");
                         break;

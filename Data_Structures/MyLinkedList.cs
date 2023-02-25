@@ -251,11 +251,13 @@ namespace Data_Structures
             }
             else
             {
+                Console.Write("Head-");
                 while (temp != null)
                 {
                     Console.Write(" {0} -> ", temp.data);
                     temp = temp.next;
                 }
+                Console.WriteLine("-NULL");
             }
         }
 
@@ -264,7 +266,44 @@ namespace Data_Structures
             Console.WriteLine("Linked List having {0} Nodes ",this.iCnt);
         }
 
-       
+        public void sort()
+        {
+            int trNd = 0;
+            Node temp = this.head;
+            Node fwrd = this.head;
+
+            if (temp == null)
+            {
+                Console.WriteLine("Linked list is Empty");
+                return;
+            }
+            else
+            {
+                while (temp != null)
+                {
+                    fwrd= temp.next;
+                    while(fwrd != null)
+                    {
+                        if((temp.data)>(fwrd.data))
+                        {       
+                            trNd = temp.data;
+
+                            temp.data = fwrd.data;
+
+                            fwrd.data = trNd;
+                        }
+                        
+
+
+                        fwrd = fwrd.next;
+                    }
+
+                    temp = temp.next;
+                }
+            }
+        }
+
+
 
     }
 }
