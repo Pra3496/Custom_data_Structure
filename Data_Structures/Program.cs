@@ -11,31 +11,31 @@ namespace Data_Structures
             Random random = new Random();
            
             int iNo,iCnt = 0;
-            Console.WriteLine("********************************************");
-            Console.WriteLine("\tWEL-COME TO DATA STRUCTURE PROGRAMS");
-            Console.WriteLine("********************************************");
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Please enter an option");
-                Console.WriteLine("1 : Create linked list");
-                Console.WriteLine("2 : Display linked list");
-                Console.WriteLine("3 : Add First Node");
-                Console.WriteLine("4 : Append Node");
-                Console.WriteLine("5 : Add at Position Node");
-                Console.WriteLine("6 : Remove First Node");
-                Console.WriteLine("7 : Remove Last Node");
-                Console.WriteLine("8 : Search Element in linked list");
-                Console.WriteLine("9 : Size of linked list");
-
-                Console.WriteLine("0 : Exit\n");
+                Console.WriteLine("*************************************************");
+                Console.WriteLine("\tWEL-COME TO DATA STRUCTURE PROGRAMS");
+                Console.WriteLine("*************************************************");
+                Console.WriteLine("\t----------OPTIONS----------\n");
+                Console.WriteLine("1  : Create linked list");
+                Console.WriteLine("2  : Display linked list");
+                Console.WriteLine("3  : Add First Node");
+                Console.WriteLine("4  : Append Node");
+                Console.WriteLine("5  : Add at Position Node");
+                Console.WriteLine("6  : Remove First Node");
+                Console.WriteLine("7  : Remove Last Node");
+                Console.WriteLine("8  : Search Element in linked list");
+                Console.WriteLine("9  : Size of linked list");
+                Console.WriteLine("10 : Remove-After Node");
+                Console.WriteLine("0  : Exit\n");
                 Console.Write("ENTER YOUR CHOICE : ");
                 int option = Convert.ToInt32(Console.ReadLine());
                 Console.WriteLine("********************************************");
                 switch (option)
                 {
                     case 1:
-                        Console.WriteLine("----------{ ADD NODE }----------");
+                        Console.WriteLine("----------{ ADD NODE }----------\n");
                         Console.Write("Enter the Element you want : ");
                         iCnt= Convert.ToInt32(Console.ReadLine());
                         for(int i = 0;i < iCnt ; i++)
@@ -44,7 +44,7 @@ namespace Data_Structures
                             iNo = random.Next(9,100);
                             list.add(iNo);
                         }
-                        Console.WriteLine("-------------------------------");
+                        Console.WriteLine("\n-------------------------------");
                         Console.Write("\npress any key.....");
                         Console.ReadKey();
                         Console.WriteLine();
@@ -141,6 +141,16 @@ namespace Data_Structures
                         Console.WriteLine("----------{ SIZE OF LINKED LIST }----------\n");
 
                         list.size();
+
+                        Console.WriteLine("\n-------------------------------------------");
+                        break;
+
+          
+                    case 10:
+                        Console.WriteLine("----------{ REMOVE-AFTER NODE }----------\n");
+                        Console.Write("Enter the Element you want to Remove : ");
+                        iNo = Convert.ToInt32(Console.ReadLine());
+                        list.removeAfter(iNo);
 
                         Console.WriteLine("\n-------------------------------------------");
                         break;

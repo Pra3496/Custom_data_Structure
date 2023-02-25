@@ -165,6 +165,44 @@ namespace Data_Structures
             }
         }
 
+        public void removeAfter(int iPos)
+        {
+
+            if (this.head == null)
+            {
+               
+                Console.WriteLine("Linked List is Empty");
+               
+            }
+            else
+            {
+                Node temp = this.head;
+
+                while (temp.next != null)
+                {
+                    if ((temp.next).data == iPos)
+                    {
+
+                        temp.next = (temp.next).next;
+                        
+                        this.iCnt--;
+                        break;
+                    }
+                    temp = temp.next;
+                }
+
+                if (temp.next == null)
+                {
+                    Console.WriteLine("\nGiven {0} Node is Not Present in Linked List", iPos);
+                }
+                else
+                {
+                    Console.WriteLine("Node Deleted Successfully");
+
+                }
+            }
+        }
+
 
 
         public void search(int iValue)
