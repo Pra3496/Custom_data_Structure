@@ -12,6 +12,8 @@ namespace Data_Structures
     {
         public Node head;
 
+        private int iCnt;
+
         public void add(int data)
         {
             Node node = new Node(data);
@@ -20,6 +22,7 @@ namespace Data_Structures
             {
                 
                 this.head = node;
+                this.iCnt++;
             }
             else
             {
@@ -31,7 +34,8 @@ namespace Data_Structures
                 }
 
                 temp.next = node;
-                  
+                this.iCnt++;
+
             }
             Console.WriteLine("{0} Inserted into Linked List", data);
         }
@@ -48,6 +52,7 @@ namespace Data_Structures
                 newNode.next = head;
                 head = newNode;
                 Console.WriteLine("{0} is added into linked list", newNode.data);
+                this.iCnt++;
             }
 
             
@@ -60,6 +65,7 @@ namespace Data_Structures
             {
                 head = newNode;
                 Console.WriteLine("{0} is added into linked list", newNode.data);
+                this.iCnt++;
             }
             else
             {
@@ -70,6 +76,7 @@ namespace Data_Structures
                 }
                 temp.next = newNode;
                 Console.WriteLine("{0} is added into linked list", newNode.data);
+                this.iCnt++;
             }
         }
 
@@ -83,6 +90,7 @@ namespace Data_Structures
             {
                 this.head = newNode;
                 Console.WriteLine("{0} is added into linked list", newNode.data);
+                this.iCnt++;
             }
             else
             {
@@ -94,11 +102,12 @@ namespace Data_Structures
                     {
                         newNode.next = temp.next;
                         temp.next = newNode;
-                        
+                        this.iCnt++;
                         break;
                     }
                     temp = temp.next;
                 }
+
                 if(temp.next == null)
                 {
                     Console.WriteLine("Given {0} Node is Not Present in Linked List",iPos);
@@ -106,6 +115,7 @@ namespace Data_Structures
                 else
                 {
                     Console.WriteLine("{0} is added Between {1} and {2} linked list", newNode.data, temp.data, (newNode.next).data);
+                    
                 }
             }
         }
@@ -116,11 +126,14 @@ namespace Data_Structures
             if (head == null)
             {
                 Console.WriteLine("Linked list is empty");
+                return;
+                
             }
             else
             {
                 this.head = (this.head).next;
                 Console.WriteLine("First element is deleted successfully");
+                this.iCnt--;
             }
 
         }
@@ -138,6 +151,7 @@ namespace Data_Structures
             else if(temp.next == null)
             {
                 this.head = null;
+
             }
             else
             { 
@@ -145,11 +159,47 @@ namespace Data_Structures
                 {
                     temp = temp.next;
                 }
-
                 temp.next = null;
+                Console.WriteLine("Last element is deleted successfully");
+                this.iCnt--;
             }
         }
 
+
+
+        public void search(int iValue)
+        {
+            Node temp = this.head;
+
+            if (temp == null)
+            {
+                Console.WriteLine("Linked list is Empty");
+                return;
+            }
+            else
+            {
+                int iCnt = 0;
+                Console.Write("Head-", temp.data);
+
+                while (temp != null)
+                {
+                    iCnt++;
+                    if (temp.data == iValue)
+                    {
+                        Console.WriteLine(" The value {0} Found at {1} Position.", temp.data, iCnt);
+                        break;
+                    }
+
+                    temp = temp.next;
+                }
+
+                if (temp == null)
+                {
+                    Console.WriteLine("{0} is not found in linked list", iValue);
+                }
+
+            }
+        }
 
 
         public void display()
@@ -169,6 +219,11 @@ namespace Data_Structures
                     temp = temp.next;
                 }
             }
+        }
+
+        public void size()
+        {
+            Console.WriteLine("Linked List having {0} Nodes ",this.iCnt);
         }
 
        
