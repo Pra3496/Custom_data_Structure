@@ -110,7 +110,7 @@ namespace Data_Structures
 
                 if(temp.next == null)
                 {
-                    Console.WriteLine("Given {0} Node is Not Present in Linked List",iPos);
+                    Console.WriteLine("\nGiven {0} Node is Not Present in Linked List",iPos);
                 }
                 else
                 {

@@ -23,8 +23,8 @@ namespace Data_Structures
                 Console.WriteLine("3 : Add First Node");
                 Console.WriteLine("4 : Append Node");
                 Console.WriteLine("5 : Add at Position Node");
-                Console.WriteLine("6 : RemoveLast Node");
-                Console.WriteLine("7 : RemoveLast Node");
+                Console.WriteLine("6 : Remove First Node");
+                Console.WriteLine("7 : Remove Last Node");
                 Console.WriteLine("8 : Search Element in linked list");
                 Console.WriteLine("9 : Size of linked list");
 
