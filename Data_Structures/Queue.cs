@@ -54,7 +54,53 @@ namespace Data_Structures
             }
         }
 
-       
+
+        public void dequeue()
+        {
+            Node temp = this.head;
+
+            if (temp == null)
+            {
+                Console.WriteLine("Queue is Empty");
+                return;
+            }
+            else if (temp.next == null)
+            {
+                this.head = null;
+                Console.WriteLine("Dequeue is Successfully Done ");
+                iCnt--;
+            }
+            else
+            {
+                while ((temp.next).next != null)
+                {
+                    temp = temp.next;
+                }
+
+                temp.next = null;
+                Console.WriteLine("Dequeue is Successfully Done ");
+                iCnt--;
+            }
+        }
+
+        public void isEmpty()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("Queue is Empty");
+            }
+            else
+            {
+                Console.WriteLine("Queue is NOT Empty");
+            }
+        }
+
+        public void size()
+        {
+            Console.WriteLine("Queue having {0} Elements. ", this.iCnt);
+        }
+
+
 
     }
 }
