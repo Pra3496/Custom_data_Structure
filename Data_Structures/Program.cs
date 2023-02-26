@@ -18,8 +18,12 @@ namespace Data_Structures
                 Console.WriteLine("\tWEL-COME TO DATA STRUCTURE STACKS");
                 Console.WriteLine("*************************************************");
                 Console.WriteLine("\t----------OPTIONS----------\n");
-                Console.WriteLine("1  : Create stack");
+                Console.WriteLine("1  : Push stack");
                 Console.WriteLine("2  : Display Stack");
+                Console.WriteLine("3  : Pop Stack");
+                Console.WriteLine("4  : Peek of Stack");
+                Console.WriteLine("5  : Is-Empty Stack");
+                Console.WriteLine("6  : Size of Stack");
                 Console.WriteLine("0  : Exit\n");
                 Console.Write("ENTER YOUR CHOICE : ");
                 int option = Convert.ToInt32(Console.ReadLine());
@@ -55,11 +59,56 @@ namespace Data_Structures
                         Console.WriteLine();
                         break;
 
-                    
+                    case 3 :
+                        Console.WriteLine("----------{ REMOVE NODE }----------\n");
+
+                        stack.pop();
+
+                        Console.WriteLine("\n-----------------------------------");
+
+                        Console.Write("\npress any key.....");
+                        Console.ReadKey();
                         Console.WriteLine();
                         break;
 
-                
+
+                    case 4:
+                        Console.WriteLine("----------{ PEEK }----------\n");
+
+                        stack.peek();
+
+                        Console.WriteLine("\n-----------------------------------");
+
+                        Console.Write("\npress any key.....");
+                        Console.ReadKey();
+                        Console.WriteLine();
+                        break;
+
+                    case 5:
+                        Console.WriteLine("----------{ IS-EMPTY }----------\n");
+
+                        stack.isEmpty();
+
+                        Console.WriteLine("\n-----------------------------------");
+
+                        Console.Write("\npress any key.....");
+                        Console.ReadKey();
+                        Console.WriteLine();
+                        break;
+
+                    case 6:
+
+                        Console.WriteLine("----------{ SIZE OF STACK }----------\n");
+
+                        stack.size();
+
+                        Console.WriteLine("\n-----------------------------------");
+
+                        Console.Write("\npress any key.....");
+                        Console.ReadKey();
+                        Console.WriteLine();
+                        break;
+
                     case 0:
                         flag= false;
                         break;

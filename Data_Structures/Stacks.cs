@@ -22,6 +22,7 @@ namespace Data_Structures
             {
                 this.head = newNode;
                 Console.WriteLine("{0} is added into Stack", newNode.data);
+                this.iCnt++;
             }
             else
             {
@@ -54,5 +55,60 @@ namespace Data_Structures
                 Console.WriteLine("-NULL");
             }
         }
+
+
+        public void pop()
+        {
+            Node temp = this.head;
+
+            if (temp == null)
+            {
+                Console.WriteLine("Stack is Empty");
+                return;
+            }
+            else if (temp.next == null)
+            {
+                this.head = null;
+                Console.WriteLine("Element is Remove successfully");
+
+            }
+            else
+            {
+
+                this.head = temp.next;
+                Console.WriteLine("First element is Remove successfully");
+                this.iCnt--;
+            }
+        }
+
+        public void peek()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("Stack is Empty");
+            }
+            else
+            {
+                Console.WriteLine("{0} is top of Stack", this.head.data);
+            }
+        }
+
+        public void isEmpty()
+        {
+            if (this.head == null)
+            {
+                Console.WriteLine("Stack is Empty");
+            }
+            else
+            {
+                Console.WriteLine("Stack is NOT Empty");
+            }
+        }
+
+        public void size()
+        {
+            Console.WriteLine("Stack having {0} Elements. ",this.iCnt);      
+        }
     }
 }
+
