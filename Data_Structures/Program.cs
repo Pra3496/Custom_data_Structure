@@ -7,6 +7,8 @@ namespace Data_Structures
         static void Main(string[] args)
         {
            Stacks stack= new Stacks();
+           
+           Queue queue= new Queue();
 
             Random random = new Random();
            
@@ -24,6 +26,8 @@ namespace Data_Structures
                 Console.WriteLine("4  : Peek of Stack");
                 Console.WriteLine("5  : Is-Empty Stack");
                 Console.WriteLine("6  : Size of Stack");
+                Console.WriteLine("7  : Enqueue in Queue");
+                Console.WriteLine("8  : Display Queue");
                 Console.WriteLine("0  : Exit\n");
                 Console.Write("ENTER YOUR CHOICE : ");
                 int option = Convert.ToInt32(Console.ReadLine());
@@ -101,6 +105,73 @@ namespace Data_Structures
                         Console.WriteLine("----------{ SIZE OF STACK }----------\n");
 
                         stack.size();
+
+                        Console.WriteLine("\n-----------------------------------");
+
+                        Console.Write("\npress any key.....");
+                        Console.ReadKey();
+                        Console.WriteLine();
+                        break;
+
+                    case 7:
+
+                        Console.WriteLine("----------{ ENQUEUE }----------\n");
+
+                        Console.Write("Enter the Element you want : ");
+                        iCnt = Convert.ToInt32(Console.ReadLine());
+                        for (int i = 0; i < iCnt; i++)
+                        {
+                            iNo = random.Next(9, 99);
+                            Console.Write("\nEnter {0} Element : ", i + 1);
+                            queue.enqueue(iNo);
+                        }
+                        Console.WriteLine("\n--------------------------------");
+
+                        Console.Write("\npress any key.....");
+                        Console.ReadKey();
+                        Console.WriteLine();
+                        break;
+
+                    case 8:
+                        Console.WriteLine("----------{ DISPLAY QUEUE }----------\n");
+
+                        queue.display();
+
+                        Console.WriteLine("\n-----------------------------------");
+                        Console.Write("\npress any key.....");
+                        Console.ReadKey();
+                        Console.WriteLine();
+                        break;
+
+                    case 9:
+                        Console.WriteLine("----------{ DEQUEUE }----------\n");
+
+                        queue.dequeue();
+
+                        Console.WriteLine("\n-----------------------------------");
+
+                        Console.Write("\npress any key.....");
+                        Console.ReadKey();
+                        Console.WriteLine();
+                        break;
+
+                    case 10:
+                        Console.WriteLine("----------{ IS-EMPTY QUEUE }----------\n");
+
+                        queue.isEmpty();
+
+                        Console.WriteLine("\n-----------------------------------");
+
+                        Console.Write("\npress any key.....");
+                        Console.ReadKey();
+                        Console.WriteLine();
+                        break;
+
+                    case 11:
+
+                        Console.WriteLine("----------{ SIZE OF QUEUE }----------\n");
+
+                        queue.size();
 
                         Console.WriteLine("\n-----------------------------------");
 
